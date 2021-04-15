@@ -41,6 +41,5 @@ if (!empty($_GET) && isset($_GET['redirect'])) {
 			</div>
 		</form>
 	</div>
-	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
