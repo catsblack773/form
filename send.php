@@ -1,21 +1,28 @@
 <?php
 if (empty($_POST)) {
-	die('POST запрос пуст');
+	echo json_encode(['res' => false, 'message' => 'Форма не может быть пустой']);
+	die;
 }
-if (!isset($_POST['name'])) {
-	die('Отсутствует имя');
+
+if (!isset($_POST['name']) || empty($_POST['name'])) {
+	echo json_encode(['res' => false, 'message' => 'Отсутствует поле имени']);
+	die;
 }
-if (!isset($_POST['email'])) {
-	die('Отсутствует email');
+if (!isset($_POST['email']) || empty($_POST['email'])) {
+	echo json_encode(['res' => false, 'message' => 'Отсутствует поле Email']);
+	die;
 }
-if (!isset($_POST['phone'])) {
-	die('Отсутствует phone');
+if (!isset($_POST['phone']) || empty($_POST['phone'])) {
+	echo json_encode(['res' => false, 'message' => 'Отсутствует поле телефон']);
+	die;
 }
-if (!isset($_POST['date'])) {
-	die('Отсутствует date');
+if (!isset($_POST['date']) || empty($_POST['date'])) {
+	echo json_encode(['res' => false, 'message' => 'Отсутствует поле дата рождения']);
+	die;
 }
-if (!isset($_POST['age'])) {
-	die('Отсутствует age');
+if (!isset($_POST['age']) || empty($_POST['age'])) {
+	echo json_encode(['res' => false, 'message' => 'Отсутствует поле возраст']);
+	die;
 }
 
 $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -48,8 +55,8 @@ $message = '
 	<p>Все файлы лежат в архиве</p>
 </div>';
 
-@mail('join@ecwid.com', 'Тестовое задание от CatsBlack773', $message);
+//@mail('join@ecwid.com', 'Тестовое задание от CatsBlack773', $message);
 @mail('catsblack773@gmail.com', 'Тестовое задание от CatsBlack773', $message, $headers);
 
-header('Location: /?redirect=ok');
-exit;
+echo json_encode(['res' => true, 'message' => 'Сообщение успешно отправлено']);
+die;

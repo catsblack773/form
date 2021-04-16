@@ -8,14 +8,12 @@ if (!empty($_GET) && isset($_GET['redirect'])) {
 <head>
 	<meta charset="utf-8">
 	<title>Форма обратной связи</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css?v1">
 </head>
 <body>
 	<div class="form-wrapp">
-		<?php  if (isset($result)): ?>
-		<h4><?=$result?></h4>
-		<?php endif; ?>
-		<form class="my-form" action="send.php" method="POST">
+		<div class="alert"></div>
+		<form name="myForm" class="my-form" action="send.php" method="POST">
 			<div class="form-group">
 				<label for="name">Имя</label>
 				<input type="text" name="name" id="name" placeholder="Введите Ваше имя" />
@@ -41,5 +39,6 @@ if (!empty($_GET) && isset($_GET['redirect'])) {
 			</div>
 		</form>
 	</div>
+	<script type="text/javascript" src="js/script.js?v1"></script>
 </body>
 </html>

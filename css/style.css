@@ -12,6 +12,26 @@ body {
 .form-wrapp {
 	width: 300px;
 	margin: 100px auto 0;
+	position: relative;
+}
+
+.alert {
+	display: none;
+	width: 100%;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+	top: -30px;
+	left: 50%;
+    transform: translate(-50%, 0);
+}
+.alert.ok {
+	color: green;
+}
+
+.alert.error {
+	color: red;
 }
 
 .my-form {
