@@ -1,8 +1,3 @@
-<?php
-if (!empty($_GET) && isset($_GET['redirect'])) {
-	$result = 'Сообщение успешно отправлено';
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
