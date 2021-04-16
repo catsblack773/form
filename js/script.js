@@ -30,8 +30,6 @@
 				resultMessage.style.display = 'none'
 			}, 2000)
 		}
-
-		console.log(result)
 	}
 	
 }())
